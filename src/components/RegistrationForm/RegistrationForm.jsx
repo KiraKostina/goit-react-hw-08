@@ -44,13 +44,9 @@ export default function RegistrationForm() {
 }
 
 // Kira888
-// kira@mail.com
-// kira@mail.com
-
-// Kira89+ зарегала usera
-// kira1 @mail.com
-// kira1@mail.com
-
-// Kira888
 // kiryan@mail.com
 // kiryan@mail.com
+
+// Kira
+// kira2@mail.com
+// kira2@mail.com
