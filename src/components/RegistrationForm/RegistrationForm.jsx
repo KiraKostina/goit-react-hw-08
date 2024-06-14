@@ -50,3 +50,7 @@ export default function RegistrationForm() {
 // Kira89+ зарегала usera
 // kira1 @mail.com
 // kira1@mail.com
+
+// Kira888
+// kiryan@mail.com
+// kiryan@mail.com
