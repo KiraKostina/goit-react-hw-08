@@ -7,6 +7,7 @@ import { fetchContacts } from '../../redux/contacts/operations';
 import Loader from '../../components/Loader/Loader';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import PageTitle from '../../components/PageTitle/PageTitle';
+import ConfirmModal from '../../components/ModalWindow/ConfirmModal';
 
 export default function ContactPage() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ export default function ContactPage() {
       {isLoading && <Loader />}
       {/* {isError && <ErrorMessage />} */}
       <ContactList />
+      <ConfirmModal />
 
       {/* <TaskEditor />
 

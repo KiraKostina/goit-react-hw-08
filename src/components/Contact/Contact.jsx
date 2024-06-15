@@ -1,12 +1,16 @@
-import { FaUser } from 'react-icons/fa';
-import { FaPhoneAlt } from 'react-icons/fa';
+import { FaUser, FaPhoneAlt } from 'react-icons/fa';
+import { RiDeleteBinLine, RiEdit2Line } from 'react-icons/ri';
+
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contacts/operations';
+// import { deleteContact } from '../../redux/contacts/operations';
+import { openModal } from '../../redux/modal/slice';
+
 import css from './Contact.module.css';
 
 export default function Contact({ contact }) {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(contact.id));
+
+  const handleOpenModal = () => dispatch(openModal());
 
   return (
     <div className={css.container}>
@@ -20,9 +24,18 @@ export default function Contact({ contact }) {
           <p>{contact.number}</p>
         </span>
       </div>
-      <button className={css.deleteCntBtn} type="button" onClick={handleDelete}>
-        Delete
-      </button>
+      <div className={css.button_container}>
+        <button
+          className={css.deleteCntBtn}
+          type="button"
+          onClick={handleOpenModal}
+        >
+          <RiDeleteBinLine size={18} />
+        </button>
+        {/* <button className={css.editButton} type="button" onClick={handleDelete}>
+          <RiEdit2Line size={18} />
+        </button> */}
+      </div>
     </div>
   );
 }
