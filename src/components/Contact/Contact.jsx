@@ -8,9 +8,9 @@ import { openModal } from '../../redux/modal/slice';
 import css from './Contact.module.css';
 
 export default function Contact({ contact }) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(contact.id);
 
-  const handleOpenModal = () => dispatch(openModal());
+  const handleOpenModal = () => dispatch(openModal(contact.id));
 
   return (
     <div className={css.container}>
