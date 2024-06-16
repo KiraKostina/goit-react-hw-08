@@ -1,6 +1,8 @@
 .search_container {
   margin-bottom: 16px;
-  max-width: 400px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search_field {
