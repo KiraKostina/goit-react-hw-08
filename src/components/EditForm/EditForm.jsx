@@ -1,7 +1,8 @@
 import { useId } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import css from '../ContactForm/ContactForm.module.css';
+// import css from '../ContactForm/ContactForm.module.css';
+import css from '../EditForm/EditForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateContact } from '../../redux/contacts/operations';
 import toast from 'react-hot-toast';
@@ -68,12 +69,14 @@ export default function EditForm({ contact: { id, name, number }, onClose }) {
           />
           <ErrorMessage name="number" component="span" />
         </div>
-        <button className={css.addCntBtn} type="submit">
-          Save
-        </button>
-        <button className={css.addCntBtn} type="button" onClick={onClose}>
-          Cancel
-        </button>
+        <div className={css.button_container}>
+          <button className={css.addCntBtn} type="submit">
+            Save
+          </button>
+          <button className={css.addCntBtn} type="button" onClick={onClose}>
+            Cancel
+          </button>
+        </div>
       </Form>
     </Formik>
   );
