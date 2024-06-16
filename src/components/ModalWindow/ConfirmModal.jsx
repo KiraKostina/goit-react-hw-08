@@ -6,6 +6,7 @@ import {
   selectIsModalOpen,
 } from '../../redux/modal/selectors';
 import { closeModal } from '../../redux/modal/slice';
+import toast from 'react-hot-toast';
 
 Modal.setAppElement('#root');
 
@@ -32,7 +33,14 @@ export default function ConfirmModal() {
   const dispatch = useDispatch();
 
   const handleConfirm = () => {
-    dispatch(deleteContact(deletedContactId)).unwrap();
+    dispatch(deleteContact(deletedContactId))
+      .unwrap()
+      .then(() => {
+        toast.success('Successfully deleted!');
+      })
+      .catch(() => {
+        toast.error("This didn't work.");
+      });
     dispatch(closeModal());
   };
 

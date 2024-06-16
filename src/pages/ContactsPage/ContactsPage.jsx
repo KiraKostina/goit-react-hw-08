@@ -8,6 +8,7 @@ import Loader from '../../components/Loader/Loader';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import ConfirmModal from '../../components/ModalWindow/ConfirmModal';
+import { Toaster } from 'react-hot-toast';
 
 export default function ContactPage() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export default function ContactPage() {
   return (
     <div>
       <PageTitle>Your contacts</PageTitle>
+      <Toaster position="top-center" reverseOrder={false} />
       <ContactForm />
       <SearchBox />
       {isLoading && <Loader />}
