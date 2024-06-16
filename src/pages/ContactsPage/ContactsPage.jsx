@@ -5,10 +5,12 @@ import SearchBox from '../../components/SearchBox/SearchBox';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import { fetchContacts } from '../../redux/contacts/operations';
 import Loader from '../../components/Loader/Loader';
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+// import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import ConfirmModal from '../../components/ModalWindow/ConfirmModal';
 import { Toaster } from 'react-hot-toast';
+// import EditForm from '../../components/EditForm/EditForm';
+// import { selectIsEditingContact } from '../../redux/contacts/selectors';
 
 export default function ContactPage() {
   const dispatch = useDispatch();
@@ -23,17 +25,14 @@ export default function ContactPage() {
     <div>
       <PageTitle>Your contacts</PageTitle>
       <Toaster position="top-center" reverseOrder={false} />
-      <ContactForm />
       <SearchBox />
+      <ContactForm />
+      {/* <EditForm /> */}
+
       {isLoading && <Loader />}
       {/* {isError && <ErrorMessage />} */}
       <ContactList />
       <ConfirmModal />
-
-      {/* <TaskEditor />
-
-      <TaskList /> */}
     </div>
   );
 }
-// className={css.container}
