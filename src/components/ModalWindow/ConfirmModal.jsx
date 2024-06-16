@@ -7,6 +7,7 @@ import {
 } from '../../redux/modal/selectors';
 import { closeModal } from '../../redux/modal/slice';
 import toast from 'react-hot-toast';
+import css from './ConfirmModal.module.css';
 
 Modal.setAppElement('#root');
 
@@ -54,8 +55,14 @@ export default function ConfirmModal() {
       contentLabel="Confirm Modal"
     >
       <p>Do you really want to delete this contact?</p>
-      <button onClick={handleConfirm}>Yes</button>
-      <button onClick={handleClose}>No</button>
+      <div className={css.button_container}>
+        <button className={css.yes_btn} onClick={handleConfirm}>
+          Yes
+        </button>
+        <button className={css.no_btn} onClick={handleClose}>
+          No
+        </button>
+      </div>
     </Modal>
   );
 }
